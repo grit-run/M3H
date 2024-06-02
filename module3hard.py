@@ -9,7 +9,7 @@ data_structure = [
 
 def calculate_structure_sum(any_structure):
     flat = []
-    sum = 0
+    sum_structure = 0
     for i in any_structure:
         if isinstance(i, (set, list, tuple)):
             flat.append(calculate_structure_sum(i))
@@ -21,10 +21,10 @@ def calculate_structure_sum(any_structure):
             flat.append(i)
     for i in flat:
         if isinstance(i, int):
-            sum += i
+            sum_structure += i
         else:
-            sum += len(i)
-    return sum
+            sum_structure += len(i)
+    return sum_structure
 
 
 result = calculate_structure_sum(data_structure)
